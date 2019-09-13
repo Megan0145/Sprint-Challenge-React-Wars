@@ -1,22 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const StyledCard = styled.div`
-width:200px;
-height:200px;
-background-color: white;
-`;
+const CharacterCard = (props) => {
+const {name, mass, height, hairColor, eyeColor} = props;
 
+return (
+    <div>
+        <h1>{name}</h1>
+        <p>{mass}</p>
+        <p>{height}</p>
+        <p>{hairColor}</p>
+        <p>{eyeColor}</p>
+    </div>
+); 
 
-function CharacterCard(props) {
-
-    return (
-       <StyledCard>
-            <h3>{props.name}</h3>
-            <p>{props.height}</p>
-            <p>{props.mass}</p>
-        </StyledCard>
-    );
-    }
+}
 
 export default CharacterCard;

@@ -1,23 +1,24 @@
-import React from 'react';
-import CharacterCard from './CharacterCard';
-import styled from 'styled-components';
+import React from "react";
+import CharacterCard from "./CharacterCard";
 
-const StyledContainer = styled.div`
-    width: 80vw;
-    background-color: grey;
+const CharacterCards = props => {
+  const { characters } = props;
 
-`;
-
-function CharacterCards(props) {
-const characters=props.characters;
-
-   return (
-        <StyledContainer>
-            <h3>Characters</h3>
-             <CharacterCard name={props.name} height={props.height} mass={props.mass} />;
-        </StyledContainer>
-   );
-   }
-
+  return (
+    <div>
+      {characters.map(character => {
+        return (
+          <CharacterCard
+            name={character.name}
+            mass={character.mass}
+            height={character.height}
+            hairColor={character.hair_color}
+            eyeColor={character.eye_color}
+          />
+        );
+      })}
+    </div>
+  );
+};
 
 export default CharacterCards;
