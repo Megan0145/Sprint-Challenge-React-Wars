@@ -7,10 +7,10 @@ const CharacterCard = props => {
   return (
     <StyledCard>
       <h1>{name}</h1>
-      <p>{mass}</p>
-      <p>{height}</p>
-      <p>{hairColor}</p>
-      <p>{eyeColor}</p>
+      <p><span>Mass: </span>{mass}</p>
+      <p><span>Height: </span>{height}</p>
+      <p><span>Hair Colour: </span>{hairColor}</p>
+      <p><span>Eye Colour: </span>{eyeColor}</p>
     </StyledCard>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import CharacterCards from "./CharacterCards";
+import { StyledApp, StyledHeader} from './AppStyles';
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -19,10 +20,10 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
+  <StyledApp>
+      <StyledHeader>React Wars</StyledHeader>
       <CharacterCards characters={characters} />
-    </div>
+  </StyledApp>
   );
 };
 

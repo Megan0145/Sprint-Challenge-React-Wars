@@ -7,6 +7,7 @@ const CharacterCards = props => {
 
   return (
     <StyledCardsContainer>
+        <h2>Characters</h2>
       {characters.map(character => {
         return (
           <CharacterCard
