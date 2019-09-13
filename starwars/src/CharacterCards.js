@@ -10,7 +10,8 @@ const CharacterCards = props => {
         <h2>Characters</h2>
       {characters.map(character => {
         return (
-          <CharacterCard
+          <CharacterCard 
+            className='wiggle'
             key={character.name}
             name={character.name}
             mass={character.mass}
