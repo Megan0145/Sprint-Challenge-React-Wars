@@ -1,14 +1,16 @@
 import React from "react";
 import CharacterCard from "./CharacterCard";
+import { StyledCardsContainer } from './AppStyles';
 
 const CharacterCards = props => {
   const { characters } = props;
 
   return (
-    <div>
+    <StyledCardsContainer>
       {characters.map(character => {
         return (
           <CharacterCard
+            key={character.name}
             name={character.name}
             mass={character.mass}
             height={character.height}
@@ -17,7 +19,7 @@ const CharacterCards = props => {
           />
         );
       })}
-    </div>
+    </StyledCardsContainer>
   );
 };
 

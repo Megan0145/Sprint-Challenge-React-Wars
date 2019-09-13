@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import CharacterCards from './CharacterCards';
+import CharacterCards from "./CharacterCards";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
@@ -16,7 +16,7 @@ const App = () => {
       .catch(error => {
         console.log(error);
       });
-    }, []);
+  }, []);
 
   return (
     <div className="App">
