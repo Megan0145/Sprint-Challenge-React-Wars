@@ -1,19 +1,30 @@
-import React from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import axios from "axios";
+import CharacterCards from "./CharacterCards";
+import { StyledApp, StyledHeader} from './AppStyles';
 
 const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
+  const [characters, setCharacters] = useState([]);
+  const API = "https://swapi.co/api/people";
 
-  // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
+  useEffect(() => {
+    axios
+      .get(API)
+      .then(response => {
+        setCharacters(response.data.results);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
 
   return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
-    </div>
+  <StyledApp>
+      <StyledHeader>React Wars</StyledHeader>
+      <CharacterCards characters={characters} />
+  </StyledApp>
   );
-}
+};
 
 export default App;
